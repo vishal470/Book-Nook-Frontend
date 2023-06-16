@@ -11,7 +11,7 @@ const Books = () => {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get("https://book-nook-backend.vercel.app/api/v1/getBooks")
+        .get("http://localhost:3500/api/v1/getBooks")
         .then((res) => setData(res.data.books));
     };
     fetchData();
@@ -42,7 +42,7 @@ const Books = () => {
 
   const handleDeleteBook = async (bookId) => {
     try {
-      await axios.delete(`https://book-nook-backend.vercel.app/api/v1/deleteBook/${bookId}`);
+      await axios.delete(`http://localhost:3500/api/v1/deleteBook/${bookId}`);
       setData(data.filter((book) => book._id !== bookId));
     } catch (error) {
       console.log(error);

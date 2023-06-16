@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
   };
   const submit= async(e)=>{
     e.preventDefault();
-    await axios.post("https://book-nook-backend.vercel.app/api/v1/add",Data)
+    await axios.post("http://localhost:3500/api/v1/add",Data)
     .then((res)=>console.log(res));
     setData({
       bookname: "",
